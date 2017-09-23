@@ -1,2 +1,2 @@
 # fundraisermemorial
-Django website to sell engraved memorial bricks, plaques, and other items
+Django fundraising website to sell engraved memorial bricks, plaques, and other items
