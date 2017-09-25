@@ -1,0 +1,20 @@
+CREATE TABLE `pavers` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`Placement`	varchar(50),
+	`Name`	varchar(50),
+	`Logo`	varchar(50),
+	`Line1`	varchar(50),
+	`Line2`	varchar(50),
+	`Line3`	varchar(50),
+	`Line4`	varchar(50),
+	`Line5`	varchar(50),
+	`Paver`	varchar(50),
+	`Row`	varchar(50),
+	`Col`	varchar(50),
+	`PayPal_ID`	varchar(50),
+	`Purchaser`	varchar(50),
+	`Email`	varchar(50),
+	`Install_Date`	datetime,
+	`created_at`	datetime NOT NULL,
+	`updated_at`	datetime NOT NULL
+);
