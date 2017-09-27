@@ -1,0 +1,11 @@
+{% extends "fundraiser_app/base.html" %}
+{% block content %}
+hello there
+<div class="centerstage">
+  {% for fmitem in fmitem_list %}
+    <div class="fmitem">
+      <h1><a href="{% url 'fmitem_detail' pk=fmitem.pk %}">{{ fmitem.name }}</a></h1>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

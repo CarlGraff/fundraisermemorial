@@ -1,7 +1,7 @@
-# from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from fundraiser_app.models import FMItem
 from fundraiser_app.forms import FMItemForm
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import (TemplateView, ListView,
@@ -37,3 +37,8 @@ class FMItemUpdateView(UpdateView):
 class FMItemDeleteView(LoginRequiredMixin, DeleteView):
     model = FMItem
     success_url = reverse_lazy('fmitem_list')
+
+def fmitem_publish(request, pk):
+    fmitem = get_object_or_404(FMItem, pk=pk)
+    fmitem.publish()
+    return redirect('fmitem_detail', pk=pk)

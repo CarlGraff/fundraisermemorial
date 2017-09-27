@@ -1,0 +1,18 @@
+{% extends "fundraiser_app/base.html" %}
+{% block content %}
+
+  <h1 >{{fmtiem.name}}</h1>
+  <p {{fmtiem.type}} </p>
+
+  <a class='btn btn-default'  href="{% url 'fmitem_publish' pk=fmtiem.pk %}">Create</a>
+
+  {% if user.is_authenticated %}
+    <a class='btn btn-primary'  href="{% url 'fmtiem_edit' pk=fmtiem.pk %}">
+      <span class="glyphicon glyphicon-pencil"></span>
+    </a>
+    <a class='btn btn-primary'  href="{% url 'fmtiem_remove' pk=fmtiem.pk %}">
+      <span class="glyphicon glyphicon-remove"></span>
+    </a>
+  {% endif %}
+
+{% endblock %}

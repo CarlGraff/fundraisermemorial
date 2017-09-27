@@ -6,9 +6,20 @@ from django.utils import timezone
 # Fund Raising Memorial Item
 class FMItem(models.Model):
     # id = models.IntegerField()
-    placement = models.CharField(db_column='Placement', max_length=50, blank=True)
+    PLACEMENT_CHOICES = (
+        ('N/A', 'N/A'), ('WWI', 'WWI'), ('WWII', 'WWII'), ('Korea', 'Korea'), ('Vietnam', 'Vietnam'),
+        ('Gulf War', 'Gulf War'), ('Iraq', 'Iraq'), ('Afghanistan', 'Afghanistan'),
+        ('Purple Heart', 'Purple Heart'), ('Women in Service', 'Women in Service'), ('POW/MIA', 'POW/MIA')
+    )
+    placement = models.CharField(db_column='Placement', max_length=50,
+                                 choices=PLACEMENT_CHOICES, default='N/A')
     name = models.CharField(db_column='Name', max_length=50, blank=True)
-    logo = models.CharField(db_column='Logo', max_length=50, blank=True)
+    LOGO_CHOICES = (
+        ('None', 'None'), ('Army', 'Army'), ('Marine Corp', 'Marine Corp'), ('Navy', 'Navy'),
+        ('Air Force', 'Air Force'), ('Coast Guard', 'Coast Guard')
+    )
+    logo = models.CharField(db_column='Logo', max_length=50,
+                            choices=LOGO_CHOICES, default='None')
     line1 = models.CharField(db_column='Line1', max_length=50, blank=True)
     line2 = models.CharField(db_column='Line2', max_length=50, blank=True)
     line3 = models.CharField(db_column='Line3', max_length=50, blank=True)
